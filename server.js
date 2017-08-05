@@ -98,6 +98,18 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
+app.get('/submit-name/:name', function(req,res){
+    // Get the name from the request
+   var name = req.params.name;
+   name.push(name);
+   // Json: Java script object notation
+   
+   res.send(JSON.stringify(names));
+   
+   
+   
+});
+
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });

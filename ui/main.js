@@ -1,7 +1,8 @@
 //Counter Code
 var button = document.getElementById('counter');
 var counter = 0;
-botton.onclick = function() { 
+
+button.onclick = function() { 
     // Make a req to the counter endpoint
     
     
@@ -11,6 +12,4 @@ botton.onclick = function() {
     counter = counter + 1;
     var span = doucumnet.getElementById('count');
     span.innerHTML = counter.toString();
-    
-    
 };

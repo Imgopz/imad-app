@@ -33,7 +33,7 @@ var articles = {
         title: 'Article Two | Gopz',
         heading: 'Article Two',
         date: 'Aug 4, 2017',
-        content: ` <p>
+        content: `<p>
                         This is the content for my Second Article. 
                    </p>`
     
@@ -124,7 +124,7 @@ app.get('/articles/:articleName',function (req, res) {
     // articleName == article-one
     // articles[articleName] == {} content for the object one
     
-    pool.query("SELECT * FROM article WHERE title= '" + req.params.articleName +"'", function(err,result){
+    pool.query("SELECT * FROM article WHERE title= $1", [req.params.articleName] , function(err,result){
         if (err) {
             res.status(500).send(err,toString());
         } else {

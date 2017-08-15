@@ -29,8 +29,3 @@ submit.onclick = function() {
     request.setRequestHeader('Content-Type','application/json');
     request.send(JSON.stringify({username: username, password: password}));
 };
-
-
-
-
-

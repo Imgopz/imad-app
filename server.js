@@ -19,7 +19,10 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(session({
     secret: 'someRandomSecretValue',
-    cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
+    cookie: { maxAge: 1000 * 60 * 60 * 24 * 30},
+    proxy: true,
+    resave: true,
+    saveUninitialized: true
 }));
 
 function createTemplate (data) {

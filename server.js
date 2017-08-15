@@ -98,6 +98,7 @@ app.post('/login', function(req, res){
           if (result.rows.length === 0) {
               res.send(403).send('username/password invalid');
           } else {
+              // Match the password
               var dbString = result.rows[0].password;
               var salt = dbstring.split('$')[2];
               var hashedPassword = hash(password, salt); // Creating a hash on the password submitted and the original slat
